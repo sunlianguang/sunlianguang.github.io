@@ -1,7 +1,7 @@
 @media (min-width: 1200px) {
     .post-cont-iner,
     .sidebar-container {
-        padding-right: 5%;
+        padding-left: 5%;
     }
 }
 
