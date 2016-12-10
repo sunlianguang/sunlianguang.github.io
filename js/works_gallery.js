@@ -79,7 +79,7 @@
 		};
 	}
 
-	// 拖动函数
+	// 拖动图片函数
 	var dragImage = function (obj) {
 		obj.mousedown(function (event) {
 			var event = event || window.event;
@@ -107,6 +107,18 @@
 				$(this).css('z-index', zIndex);
 			}).mouseleave(function () {
 				$(this).unbind('mousemove');
+			}).on('swipe', function (e) {
+				var mouseEndX = parseInt(e.pageX) - parseInt(mouseStartX) + parseInt(imageStartX),
+					mouseEndY = parseInt(e.pageY) - parseInt(mouseStartY) + parseInt(imageStartY);
+
+				$(this).css({
+					'left': mouseEndX + 'px',
+					'top': mouseEndY + 'px',
+				})
+
+				$(this).attr('show-big', 0);
+				returOriginImage($(this));
+
 			})
 		})
 	}
@@ -192,5 +204,16 @@ $(function () {
 
 	// 双击展示图片
 	showBig(images);
+
+	// 使得想下滚动时，导航栏固定头部
+    (function (){
+        document.addEventListener('scroll',function(){
+            var currentTop = window.pageYOffset,
+                navbar =  document.querySelector(".navbar-custom");
+            currentTop > navbar.clientHeight
+                ?navbar.classList.add('is-fixed')
+                :navbar.classList.remove('is-fixed')
+        })
+    })()
 
 })
