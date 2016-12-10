@@ -103,10 +103,10 @@ a:focus {
     color: #0085a1;
 }
 
-a img:hover,
+/* a img:hover,
 a img:focus {
     cursor: zoom-in;
-}
+} */
 
 
 blockquote {
