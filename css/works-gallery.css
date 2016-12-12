@@ -61,7 +61,7 @@
     height: auto;
 
     cursor: pointer;
-    transition: transform .5s;
+    /* transition: transform .5s; */
 
     border: 10px solid #fff;
     background-color: #fff;

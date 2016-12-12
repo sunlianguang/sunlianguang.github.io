@@ -97,6 +97,7 @@
 				$(this).css({
 					'left': mouseEndX + 'px',
 					'top': mouseEndY + 'px',
+					'transition': 'top 0s, left 0s'
 				})
 
 				$(this).attr('show-big', 0);
@@ -127,7 +128,7 @@
 			}
 
 			// 设置属性 "show-big" 
-			// 1：标志图片没有被放大，原始大小。
+			// 0：标志图片没有被放大，原始大小。
 			// 1：标志图片被放大，而且图片正面。
 			// 2：标志图片放大，而且图片反面。 
 			$(this).attr('show-big', '1');
@@ -139,15 +140,18 @@
 				'-webkit-transform': 'rotate(0deg)',
 				'-moz-transform': 'rotate(0deg)',
 				'transform': 'rotate(0deg)',
-				'-webkit-transform': 'scale(2)',
-				'-moz-transform': 'scale(2)',
-				'transform': 'scale(2)',
 				'transform-origin': 'center center',
 				'z-index': '90',
+				'transition': 'transform 0.5s, top 0.5s, left 0.5s'
 			})
-			// if (!$(this).hasClass('show-big')) {
-			// 	$(this).addClass('show-big');
-			// }
+			if (parseInt($(window).width()) > 768) {
+				$(this).css({
+					'-webkit-transform': 'scale(2)',
+					'-moz-transform': 'scale(2)',
+					'transform': 'scale(2)',
+				})
+			}
+
 
 			// 方案一：双击放大后，为其他部分设置遮罩层，点击放大的图片之外的遮罩层部分回到原大小
 			if ($('.wrap-div').length <= 0) {
