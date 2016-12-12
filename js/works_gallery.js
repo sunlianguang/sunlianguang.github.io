@@ -107,18 +107,6 @@
 				$(this).css('z-index', zIndex);
 			}).mouseleave(function () {
 				$(this).unbind('mousemove');
-			}).on('swipe', function (e) {
-				var mouseEndX = parseInt(e.pageX) - parseInt(mouseStartX) + parseInt(imageStartX),
-					mouseEndY = parseInt(e.pageY) - parseInt(mouseStartY) + parseInt(imageStartY);
-
-				$(this).css({
-					'left': mouseEndX + 'px',
-					'top': mouseEndY + 'px',
-				})
-
-				$(this).attr('show-big', 0);
-				returOriginImage($(this));
-
 			})
 		})
 	}
