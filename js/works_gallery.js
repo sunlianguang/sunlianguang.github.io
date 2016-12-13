@@ -20,7 +20,7 @@
 		// 无论标志值为多少，都设置展示图片，并将标志设为0，表示原始大小
 		aImage.find('IMG').addClass('is-visible').removeClass('is-hidden');
 		aImage.find('FIGCAPTION').addClass('is-hidden').removeClass('is-visible');
-		aImage.attr('show-big', 0);
+		aImage.attr('show-big-index', 0);
 		
 
 		// 隐藏 figcaption
@@ -34,10 +34,10 @@
 		aImage.on('click', function (event) {
 			event.stopPropagation();
 			// 判断图片被放大，并且图片正面向前，标志为1
-			if (aImage.attr('show-big') === '1') {
+			if (aImage.attr('show-big-index') === '1') {
 				aImage.find('IMG').addClass('is-hidden').removeClass('is-visible');
 				aImage.find('FIGCAPTION').addClass('is-visible').removeClass('is-hidden');
-				aImage.attr('show-big', '2');
+				aImage.attr('show-big-index', '2');
 			}
 		})
 
@@ -47,12 +47,12 @@
 			// 此时不用判断标志，因为当可以点击文字内容时，肯定是放大之后。
 			$(this).addClass('is-hidden').removeClass('is-visible');
 			aImage.find('IMG').addClass('is-visible').removeClass('is-hidden');
-			aImage.attr('show-big', '1');
+			aImage.attr('show-big-index', '1');
 		})
 	}
 
 	// 随机摆放图片（包括上下层）
-	var setImage = function (obj) {
+	var setImage = function (obj, oTop, oLeft) {
 		for (var i = obj.length - 1; i >= 0; i--) {
 			var that = obj.eq(i);
 			var angleNumber = Math.ceil(Math.random() * 30) * (Math.random() > 0.5 ? 1 : -1),
@@ -67,12 +67,23 @@
 				leftNumber = Math.random() * that.parent().width();
 			} while (leftNumber < 0 || leftNumber > that.parent().width() - that.width())
 
+			if (oTop && oLeft) {
+				that.css({
+					'top' : oTop,
+					'left': oLeft
+				})
+			} else {
+				that.css({
+					'top': topNumber,
+					'left': leftNumber,
+				})
+			}
+
 			that.css({
 				'-webkit-transform': 'rotate(' + angleNumber +'deg)',
 				'-moz-transform': 'rotate(' + angleNumber +'deg)',
 				'transform': 'rotate(' + angleNumber +'deg)',
-				'top': topNumber,
-				'left': leftNumber,
+				'transition': 'top 0.5s, left 0.5s',
 				// 设置随机上下层的效果（最大值是30）
 				'z-index': angleNumber > 0 ? angleNumber : angleNumber * -1
 			})
@@ -100,7 +111,7 @@
 					'transition': 'top 0s, left 0s'
 				})
 
-				$(this).attr('show-big', 0);
+				$(this).attr('show-big-index', 0);
 				returOriginImage($(this));
 
 			}).mouseup(function () {
@@ -119,19 +130,26 @@
 
 			// 用数组存放当前照片和上一张照片，点击点前照片后，上一张照片调用setImage() 函数重新摆放；
 			// 当前照片和上一张照片是同一张时，照片不随机摆放。
-			arr.push(obj.index($(this)));
+			arr.push({
+				oIndex: obj.index($(this)),
+				oTop: $(this).css('top'),
+				oLeft: $(this).css('left'),
+			})
+			// arr.push(obj.index($(this)));
+
 			if (arr.length > 1) {
-				if (arr[0] !== arr[1]) {
-					setImage(obj.eq(arr[0]));
+				if (arr[0].oIndex !== arr[1].oIndex) {
+					// 将上一张图片放回原位
+					setImage(obj.eq(arr[0].oIndex), arr[0].oTop, arr[0].oLeft);
 				}
 				arr.shift();
 			}
 
-			// 设置属性 "show-big" 
+			// 设置属性 "show-big-index" 
 			// 0：标志图片没有被放大，原始大小。
 			// 1：标志图片被放大，而且图片正面。
 			// 2：标志图片放大，而且图片反面。 
-			$(this).attr('show-big', '1');
+			$(this).attr('show-big-index', '1');
 			$(this).css({
 				'top': '50%',
 				'left': '50%',
@@ -144,6 +162,7 @@
 				'z-index': '90',
 				'transition': 'transform 0.5s, top 0.5s, left 0.5s'
 			})
+			// 当屏幕大于 768px 是时才放大，手机屏幕不放大图片
 			if (parseInt($(window).width()) > 768) {
 				$(this).css({
 					'-webkit-transform': 'scale(2)',
