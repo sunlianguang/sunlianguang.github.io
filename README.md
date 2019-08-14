@@ -1,2 +1,2 @@
 # sunlianguang.github.io
-welcome to https://chechang.top
+welcome to https://checc.top
