@@ -878,7 +878,7 @@ html {
 }
 body {
   background-color: #fff;
-  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  font-family: proxima-nova, HelveticaNeue, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   font-size: 1.4rem;
   line-height: 1.7;
   color: #1e3e3f;
@@ -1092,9 +1092,6 @@ img {
   .jumbotron {
     margin-bottom: 6rem;
   }
-  .content {
-    margin-right: 10rem;
-  }
   .sidebar {
     right: 0;
     background-color: #fff;
@@ -1163,7 +1160,7 @@ img {
   height: auto;
 }
 .video .brand {
-  width: 4.8rem;
+  width: 40rem;
 }
 .video-frame {
   position: absolute;
@@ -1198,18 +1195,28 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(178,191,204,0.6);
+  background-color: rgba(178,191,204,0);
 }
 .video-inner {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -65%);
+  transform: translate(-50%, -55%);
 }
 .video-inner a,
 .video-inner {
-  color: #fff;
+  color: #172d3e;
   text-decoration: none;
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+  font-family: proxima-nova, HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.video-inner p {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  margin: 0;
 }
 .video-learn-more {
   position: absolute;
