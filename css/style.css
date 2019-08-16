@@ -879,7 +879,7 @@ html {
 body {
   background-color: #fff;
   font-family: proxima-nova, HelveticaNeue, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   line-height: 1.7;
   color: #1e3e3f;
   padding: 0;
@@ -1094,7 +1094,7 @@ img {
   }
   .sidebar {
     right: 0;
-    background-color: #fff;
+    background-color: rgba(0,0,0,0);
   }
   .navbar-toggle {
     display: none;
@@ -1211,9 +1211,10 @@ img {
   font-size: 4rem;
   font-weight: 800;
   letter-spacing: 0.2rem;
-  font-family: proxima-nova, HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Noto Serif', 'Times New Roman', serif;
 }
 .video-inner p {
+  color: #999;
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: 0.1rem;
@@ -1320,7 +1321,10 @@ img {
   padding: 3rem 0 0;
 }
 .article {
-  padding: 3rem 0;
+  padding: 4rem 0;
+}
+.article-inner {
+  letter-spacing: 0.04rem;
 }
 .article-topping {
   position: absolute;
@@ -1331,6 +1335,9 @@ img {
 .article-topping .fe {
   font-size: 2rem;
   line-height: 1.7;
+}
+.article-meta {
+  padding-top: 1rem;
 }
 .article-meta::before,
 .article-meta::after {
@@ -1357,7 +1364,7 @@ img {
   margin-left: 0;
 }
 .article-entry {
-  margin-top: 3rem;
+  margin-top: 1rem;
   color: #1e3e3f;
 }
 .article-entry::before,
@@ -1365,6 +1372,10 @@ img {
   content: "";
   display: table;
   clear: both;
+}
+.article-entry .article-more-link {
+  position: absolute;
+  text-decoration: none;
 }
 .article-entry .pullquote {
   text-align: left;
@@ -1413,6 +1424,7 @@ img {
 .article-header .article-title {
   text-decoration: none;
   color: #1e3e3f;
+  font-size: 3rem;
 }
 .article-footer {
   margin-top: 3rem;
@@ -1532,6 +1544,7 @@ img {
   float: left;
   width: 5rem;
   height: 3.6rem;
+  line-height: 3.6rem;
   color: #172d3e;
   text-align: center;
   text-decoration: none;
@@ -2006,7 +2019,7 @@ pre .javascript .function {
 }
 .gitalk,
 .markdown-body {
-  font-size: 1.4rem !important;
+  font-size: 1.7rem !important;
 }
 .gt-container .gt-avatar.gt-comment-avatar img {
   -webkit-border-radius: 50%;
