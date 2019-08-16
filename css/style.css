@@ -1094,7 +1094,7 @@ img {
   }
   .sidebar {
     right: 0;
-    background-color: rgba(0,0,0,0);
+    background: none;
   }
   .navbar-toggle {
     display: none;
@@ -2215,6 +2215,9 @@ pre .javascript .function {
   bottom: 0;
   width: 100%;
 }
+.navbar-bottom .totop {
+  display: none;
+}
 .logo {
   text-align: center;
 }
@@ -2235,7 +2238,7 @@ pre .javascript .function {
   line-height: 3rem;
 }
 .totop:hover > i {
-  animation: rocket 0.3s ease-in-out;
+  animation: rocket 0.5s ease-in-out;
 }
 @-moz-keyframes rocket {
   0% {

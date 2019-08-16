@@ -9,6 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
+    回归 |
     
     小车厂</title>
   
@@ -21,64 +22,17 @@
 </html>
 <body>
 <main class="content">
-  <section class="jumbotron">
-  <div class="video">
-    <!--
-    
-      <div class="video-frame">
-        <img src="overlay-hero.png" alt="Decorative image frame">
-      </div>
-    
-    -->
-    <div class="video-media">
-      <!--
-      首页的视频
-      <video playsinline="" autoplay="" loop="" muted="" data-autoplay=""
-             poster="ocean.png" x5-video-player-type="h5">
-        <source src="ocean.mp4" type="video/mp4">
-        <source src="ocean.ogv" type="video/ogg">
-        <source src="ocean.webm" type="video/webm">
-        <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <img src="">
-      -->
-      <div class="video-overlay"></div>
-    </div>
-    <div class="video-inner text-center text-white">
-      <div><img src="/images/title.png" class="brand" alt="小车厂"></div>
-      
-      <!--
-      <h1><a href="/">HI,I'M 小车厂.</a></h1>
-      -->
-
-      <a href="/">「小车厂」是我的昵称。</a>
-      <p>在这里会分享自己的一点想法，欢迎来讨论。</p>
-
-    </div>
-    <div class="video-learn-more">
-      <a class="anchor" href="#landingpage"><i class="fe fe-mouse"></i></a>
-    </div>
-  </div>
-</section>
-
-<div id="landingpage">
   <section class="outer">
-  <article class="articles">
-    
-    <h1 class="page-type-title"></h1>
-
-    
-      
-        <article id="post-回归" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  <article id="post-回归" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/08/12/回归/">回归</a>
-    </h2>
+    <h1 class="article-title" itemprop="name">
+      回归
+    </h1>
   
   
 
@@ -105,9 +59,15 @@
       
         <p><strong>2019 年 8 月 12 日 凌晨，一个新的开始，算是吧。</strong></p>
 <p>我又打算开始写点东西了，在大学的时候自己用 GitHub Pages 折腾了个博客，写了几篇学前端的知识点和随笔，想来快 3 年了，现在回过头看那几篇文章，两个想法：</p>
-        
-          <a class="article-more-link" href="/2019/08/12/回归/">Read More...</a>
-        
+<a id="more"></a>
+<ol>
+<li>我过去写的东西好幼稚，无论何时看过去的微博、朋友圈都会觉得很幼稚，说明在成长；</li>
+<li>我过去还有这 “才华”，过去的东西虽然看起来很幼稚，但仍然会让我们觉得『我过去还写过这意想不到的东西！』，这种感觉很有意思；</li>
+</ol>
+<p>写写东西挺好的，是对自己逻辑的一种梳理，也算是记录一下自己思想的成长过程，只是不知能坚持多久，目前想的是一周写一篇。</p>
+<hr>
+<p>开始写的时候还是 11 号，现在已经 12 号凌晨了，默默的改了上面的时间点，星期一了，崭新的一天！</p>
+
       
     <footer class="article-footer">
       <a data-url="http://checc.top/2019/08/12/回归/" data-id="cjzefcq5l0000bcjoetppgzso"
@@ -119,6 +79,31 @@
   </div>
 
   
+    
+
+  
+
+  
+    
+  <div class="gitalk" id="gitalk-container"></div>
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: '9aa6b712b11766a37bec',
+      clientSecret: '0ed806fbe553790ee10a4473038a4c5c37b44669',
+      repo: 'hexo-gitalk',
+      owner: 'sunlianguang',
+      admin: ['sunlianguang'],
+      // id: location.pathname,      // Ensure uniqueness and length less than 50
+      id: md5(location.pathname),
+      distractionFreeMode: false,  // Facebook-like distraction free mode
+      pagerDirection: 'last'
+    })
+
+  gitalk.render('gitalk-container')
+  </script>
 
   
 
@@ -126,14 +111,7 @@
 
 
 
-      
-  </article>
-  
-
-  
 </section>
-</div>
-
   <footer class="footer">
   <div class="outer">
     <div class="float-right">
