@@ -892,6 +892,7 @@ body ::selection {
   color: #e6e6e6;
 }
 a {
+  text-decoration: none;
   color: #127ea9;
 }
 a:hover {
@@ -930,7 +931,7 @@ img {
 .article-entry h4,
 .article-entry h5,
 .article-entry h6 {
-  margin: 1.5rem 0;
+  margin: 1rem 0 0;
 }
 .article-entry hr {
   height: 0.1rem;
@@ -969,13 +970,12 @@ img {
 .article-entry ul,
 .article-entry ol,
 .article-entry dl {
-  margin: 1.5rem 0;
-  line-height: line-height;
+  margin: 0;
 }
 .article-entry p,
 .article-entry table,
 .article-entry blockquote {
-  margin: 1.5rem 0;
+  margin: 1rem 0 0.5rem;
 }
 .article-entry img,
 .article-entry video {
