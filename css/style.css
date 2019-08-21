@@ -1088,7 +1088,7 @@ img {
 .local-search {
   width: 100%;
 }
-@media (min-width: 768px) {
+@media (min-width: 1068px) {
   .jumbotron {
     margin-bottom: 6rem;
   }
@@ -1102,8 +1102,8 @@ img {
   .wrap,
   .outer {
     width: 70rem;
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
   }
   .local-search {
     width: 70rem;
@@ -2065,7 +2065,7 @@ pre .javascript .function {
   -moz-border-radius: 0.125rem;
   border-radius: 0.125rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 1068px) {
   .macbook .macbook-screen {
     border-width: 2rem 1.25rem 1.25rem;
   }
@@ -2177,8 +2177,6 @@ pre .javascript .function {
 }
 .navbar .nav {
   list-style: none;
-  padding-left: 0;
-  margin-left: 0;
 }
 .navbar .nav .nav-item-link {
   display: block;
